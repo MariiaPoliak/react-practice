@@ -1,0 +1,190 @@
+/* Фон для всієї сторінки */
+body {
+  background-color: #2f3640; /* Темно-сірий фон */
+  font-family: "Arial", sans-serif; /* Шрифт для всієї сторінки */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Висота сторінки на весь екран */
+  overflow: hidden;
+}
+
+/* Контейнер для карток */
+.sneaker-container {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+}
+
+/* Картка товару */
+.sneaker-card {
+  width: 300px;
+  height: 300px; /* Вищий розмір картки для зручності */
+  margin: 15px;
+  border: 1px solid #e5e5e5;
+  padding: 20px;
+  text-align: start;
+  border-radius: 10px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  position: relative;
+  overflow: visible; /* Дозволяє зображенню виходити за межі картки */
+}
+
+/* Підйом картки при ховері */
+.sneaker-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.1); /* Збільшення яскравості */
+}
+
+/* Зображення товару */
+.sneaker-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  transform-origin: center center; /* Центрування обертання */
+}
+
+/* Обертання зображення при ховері */
+.sneaker-card:hover .sneaker-image {
+  transform: rotate(30deg) translateY(-20px) scale(1.1);
+}
+
+/* Деталі товару */
+.sneaker-details {
+  margin-top: 20px;
+  color: #333;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  position: relative; /* Додано позиціонування для правильного розташування */
+  z-index: 3; /* Забезпечує правильний порядок відображення */
+}
+
+.sneaker-details h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  color: #2c3e50;
+}
+
+.sneaker-details h2,
+.sneaker-details p {
+  opacity: 1; /* Переконаємося, що текст відображається */
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.sneaker-details p {
+  font-size: 1.1rem;
+  color: #501c17;
+  margin-top: 5px;
+}
+
+/* Підйом деталей при ховері */
+.sneaker-card:hover .sneaker-details {
+  transform: translateY(-50px);
+}
+
+/* Кнопка замовлення */
+.order-button {
+  opacity: 0;
+  background: linear-gradient(
+    45deg,
+    #4f5b62,
+    #6c757d
+  ); /* Темно-сірий градієнт */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px; /* Округлі краї */
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease,
+    box-shadow 0.3s ease, filter 0.3s ease;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Легка тінь */
+}
+
+/* Анімація при ховері */
+.order-button:hover {
+  background: linear-gradient(
+    45deg,
+    #3e474e,
+    #555c62
+  ); /* Темніший градієнт при ховері */
+  transform: translateX(-50%) translateY(0) scale(1.1); /* Плавний підйом і збільшення */
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease,
+    filter 0.3s ease;
+  background: linear-gradient(45deg, #3e474e, #555c62);
+  border: 2px solid #222120; /* Світлий контур кнопки при ховері */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 0 15px #7e7d7d; /* Світіння кнопки */
+  filter: brightness(1.2); /* Підсвічування кнопки */
+}
+
+/* Виведення кнопки при ховері */
+.sneaker-card:hover .order-button {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0); /* Підйом кнопки */
+}
+
+/* Опис товару */
+.sneaker-description {
+  position: absolute;
+  bottom: 80px; /* Трошки вище кнопки */
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #555;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1; /* Опис буде знаходитися під кнопкою */
+}
+
+/* Підйом опису при ховері */
+.sneaker-card:hover .sneaker-description {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Плавні переходи для кожного елементу */
+.sneaker-card,
+.sneaker-details,
+.sneaker-image,
+.order-button,
+.sneaker-description {
+  transition: all 0.3s ease;
+}
+
+/* Додаткові ефекти для карток */
+.sneaker-card {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Підсвічування картки */
+.sneaker-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.1);
+}

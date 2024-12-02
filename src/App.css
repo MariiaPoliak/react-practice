@@ -1,0 +1,18 @@
+.app {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  margin: 20px;
+  padding-bottom: 30px;
+  color: rgb(166, 167, 168);
+}
+
+.sneaker-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
