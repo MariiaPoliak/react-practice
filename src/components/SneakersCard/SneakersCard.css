@@ -52,11 +52,12 @@ body {
   border-radius: 10px;
   transition: transform 0.3s ease;
   transform-origin: center center; /* Центрування обертання */
+  margin-top: 40px;
 }
 
 /* Обертання зображення при ховері */
 .sneaker-card:hover .sneaker-image {
-  transform: rotate(30deg) translateY(-20px) scale(1.1);
+  transform: rotate(30deg) translateY(-60px) scale(1.1);
 }
 
 /* Деталі товару */
@@ -66,6 +67,7 @@ body {
   transition: transform 0.3s ease, opacity 0.3s ease;
   position: relative; /* Додано позиціонування для правильного розташування */
   z-index: 3; /* Забезпечує правильний порядок відображення */
+  margin-bottom: 20px;
 }
 
 .sneaker-details h2 {
@@ -90,7 +92,7 @@ body {
 
 /* Підйом деталей при ховері */
 .sneaker-card:hover .sneaker-details {
-  transform: translateY(-50px);
+  transform: translateY(-80px);
 }
 
 /* Кнопка замовлення */
@@ -143,7 +145,7 @@ body {
 /* Опис товару */
 .sneaker-description {
   position: absolute;
-  bottom: 80px; /* Трошки вище кнопки */
+  bottom: 70px; /* Трошки вище кнопки */
   left: 50%;
   transform: translateX(-50%) translateY(20px);
   opacity: 0;
